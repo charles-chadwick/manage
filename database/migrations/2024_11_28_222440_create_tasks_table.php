@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('category', 50);
             $table->string('title', 250);
             $table->text('description')->nullable();
-            $table->enum('duration', ['Hourly', 'Daily', 'Weekly'])->nullable();
+            $table->string('duration');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
